@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='registration.css'/>
+    <title>Registration Form</title>
+</head>
+
+<body>
+    <h1 class="head">Registration Form</h1>
+    <label for="name">Enter name</label>
+    <input type="text" name="name" id="name">
+    <br />
+    <label for="gender">Select Gender</label>
+    <select id="gender">
+        <option value="">--</option>
+        <option value="male">M</option>
+        <option value="female">F</option>
+    </select>
+    <br />
+    <label for="email">Enter Email</label>
+    <input type="text" name="email" id="email">
+    <br />
+    <label for="mobile">Enter Mobile Number</label>
+    <input type="text" name="mobile" id="mobile">
+    <br />
+    <hr>
+    <h1 id="dName">NAME</h1>
+    <h2 id="dGender">GENDER</h2>
+    <h3 id="dEmail">EMAIL</h3>
+    <h4 id="dMobile">MOBILE</h4>
+    <hr>
+    <button onclick="showName()">NAME</button>
+    <button onclick="showGender()">GENDER</button>
+    <button onclick="showEmail()">EMAIL</button>
+    <button onclick="showMobile()">MOBILE</button>
+    <button onclick="resetForm()">RESET FORM</button>
+    <button onclick="resetDisplay()">RESET DISPLAY</button>
+    <script type="text/javascript">
+        function showName() {
+            var nameInput = document.getElementById('name');
+            var displayName = document.getElementById('dName');
+            displayName.textContent = 'Your name: ' + nameInput.value;
+        }
+
+        function showGender() {
+            var genderSelect = document.getElementById('gender');
+            var displayGender = document.getElementById('dGender');
+            displayGender.textContent = 'Your gender: ' + genderSelect.options[genderSelect.selectedIndex].text;
+        }
+
+        function showEmail() {
+            var emailInput = document.getElementById('email');
+            var displayEmail = document.getElementById('dEmail');
+            displayEmail.textContent = 'Your email: ' + emailInput.value;
+        }
+
+        function showMobile() {
+            var mobileInput = document.getElementById('mobile');
+            var displayMobile = document.getElementById('dMobile');
+            displayMobile.textContent = 'Your mobile no: ' + mobileInput.value;
+        }
+
+        function resetForm() {
+            document.getElementById('name').value = "";
+            document.getElementById('gender').selectedIndex = 0;
+            document.getElementById('email').value = "";
+            document.getElementById('mobile').value = "";
+        }
+
+        function resetDisplay() {
+            document.getElementById('dName').textContent = "NAME";
+            document.getElementById('dGender').textContent = "GENDER";
+            document.getElementById('dEmail').textContent = "EMAIL";
+            document.getElementById('dMobile').textContent = "MOBILE";
+        }
+    </script>
+
+</body>
+
+</html>
